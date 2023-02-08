@@ -8,9 +8,11 @@ GET http://127.0.0.1:8000/api/artigo/1 HTTP/1.1
 content-type: application/json
 
 ### rota que cadastra um novo artigo
-POST http://127.0.0.1:8000/api/artigos HTTP/1.1
+POST http://127.0.0.1:8000/api/artigo HTTP/1.1
 content-type: application/json
 
 {
-
+    "url": "dasdas",
+    "titulo": "dasd",
+    "label": "asdasd"
 }
