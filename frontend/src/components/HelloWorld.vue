@@ -1,14 +1,28 @@
 <template>
   <div class="hello">
     <FormComponent />
+    <TableComponent :item="items"/>
   </div>
 </template>
 
 <script>
 import FormComponent from './FormComponent.vue'
+import TableComponent from './TableComponent.vue'
+import api from '../services'
 export default {
-  components: { FormComponent },
-  name: 'HelloWorld'
+  components: { FormComponent, TableComponent },
+  name: 'HelloWorld',
+  data () {
+    return {
+      items: []
+    }
+  },
+  mounted () {
+    api.get('artigos').then((response) => {
+      this.items = response.data.data
+      console.log(this.items)
+    })
+  }
 }
 </script>
 
