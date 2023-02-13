@@ -12,7 +12,7 @@ POST http://127.0.0.1:8000/api/artigo HTTP/1.1
 content-type: application/json
 
 {
-    "url": "dasdas",
-    "titulo": "dasd",
-    "label": "asdasd"
+    "url": "daasdsdas",
+    "titulo": "asddasd",
+    "label": "asdasdasd"
 }

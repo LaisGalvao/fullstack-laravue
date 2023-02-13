@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <FormComponent />
-    <TableComponent :item="items"/>
+      <TableComponent :item="items" :field="fields"/>
   </div>
 </template>
 
@@ -10,15 +10,28 @@ import FormComponent from './FormComponent.vue'
 import TableComponent from './TableComponent.vue'
 import api from '../services'
 export default {
-  components: { FormComponent, TableComponent },
+  components: { FormComponent, TableComponent: TableComponent },
   name: 'HelloWorld',
   data () {
     return {
-      items: []
+      items: [],
+      fields: [{
+        key: 'url',
+        label: 'Url'
+      }, {
+        key: 'titulo',
+        label: 'Titulo'
+      }, {
+        key: 'label',
+        label: 'Label'
+      }, {
+        key: 'actions',
+        label: ''
+      }]
     }
   },
   mounted () {
-    api.get('artigos').then((response) => {
+    api.get('/artigos').then((response) => {
       this.items = response.data.data
       console.log(this.items)
     })
