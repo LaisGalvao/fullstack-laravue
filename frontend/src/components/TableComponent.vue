@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import api from '../services'
 export default {
   data () {
     return {
@@ -25,6 +26,10 @@ export default {
   methods: {
     onEdit (id) {
       this.edit = this.edit !== id ? id : null
+      console.log(id)
+      api.put('/artigo/' + id).then(response => {
+        console.log(response.data)
+      })
     },
     onDelete (id) {
       return id
